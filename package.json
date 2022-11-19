@@ -1,13 +1,23 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "node lib/posts.js",
+    "test2": "run-func lib/posts.js getSortedPostsData",
+    "test3": "node -e \"import('./lib/posts.js').then(a => console.log(a.getSortedPostsData()))\"",
+    "test4": "node -e \"import('./lib/posts.js').then(console.log('hi'))\"",
+    "greeting": "echo \"Hello World\""
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "run-func": "^3.0.0"
   }
 }
